@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Sistema de Portaria - TechZone</title>
+</head>
+
+<body>
+
+<h1>🚪 Sistema de Portaria - TechZone</h1>
+
+<script>
+
+// 1️⃣ Lista de colaboradores autorizados
+let autorizados = ["Ana", "Gaby", "Paulo", "Raul"];
+
+// 2️⃣ Entrada de dados
+let nomeUsuario = prompt("Digite seu nome:");
+let horaAtual = Number(prompt("Digite a hora atual (0-23):"));
+
+// 3️⃣ Verificação de horário válido
+if (horaAtual < 0 || horaAtual > 23 || isNaN(horaAtual)) {
+    alert("Horário inválido. Digite um valor entre 0 e 23.");
+}
+
+// 4️⃣ Verificação de acesso
+else if (autorizados.includes(nomeUsuario) && horaAtual < 22) {
+    alert("✅ Acesso Permitido. Bem-vindo(a), " + nomeUsuario + "!");
+}
+
+else if (autorizados.includes(nomeUsuario) && horaAtual >= 22) {
+    alert("⛔ Acesso Negado: Fora do horário permitido (após as 22h).");
+}
+
+else {
+    alert("⛔ Acesso Negado: Usuário não cadastrado.");
+}
+
+</script>
+
+</body>
+</html>
